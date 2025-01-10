@@ -1,0 +1,35 @@
+.top-menu {
+    background: #1976d2;
+    padding: 2px 15px;
+}
+
+.logo {
+    max-height: 55px;
+}
+
+
+.courses {
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+ .course-card {
+    margin-bottom: 40px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 20px 0;
+    box-shadow: 0 1px 16px 0 rgba(0, 0, 0, .2), 0 2px 8px 0 rgba(0, 0, 0, .14), 0 4px 8px -1px rgba(0, 0, 0, .12);
+} 
+
+.courses .course-title {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+/* .courses .course-description {
+    max-width: 360px;
+    margin: 0 auto;
+    margin-top: 15px;
+    user-select: none;
+} */
+
