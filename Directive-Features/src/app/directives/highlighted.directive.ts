@@ -1,7 +1,8 @@
 import { Directive, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
 
 @Directive({
-  selector: '[highlighted]'
+  selector: '[highlighted]',
+  exportAs: 'hl'
 })
 export class HighlightedDirective {
 
@@ -52,6 +53,11 @@ mouseover($event:any){
 @HostListener('mouseleave')
 mouseleave(){
   this.Highlighted = false;
+  this.toggleHighlight.emit(this.Highlighted);
+}
+
+toggle(){
+  this.Highlighted =!this.Highlighted;
   this.toggleHighlight.emit(this.Highlighted);
 }
 
