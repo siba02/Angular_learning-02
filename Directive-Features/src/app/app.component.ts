@@ -5,10 +5,11 @@ import { CourseCardComponent } from './course-card/course-card.component';
 import { CourseImageComponent } from './course-image/course-image.component';
 import { NgIf } from '@angular/common';
 import { Course } from '../model/Course';
+import { HighlightedDirective } from './directives/highlighted.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [CourseCardComponent,CourseImageComponent,NgIf],
+  imports: [CourseCardComponent,CourseImageComponent,NgIf,HighlightedDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
