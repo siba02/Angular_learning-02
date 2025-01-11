@@ -1,4 +1,4 @@
-<div class="top-menu"  >
+<div class="top-menu" [highlighted]="true" >
   <img class="logo" src="/assets/images/main-page-logo-small-hat.png">
 </div>
 <div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div>
@@ -7,7 +7,8 @@
 
 <div class="courses" *ngIf="courseData[0] as course">
 
-  <app-course-card [courseDetail]="course" appHighlighted class="highlighted " (courseSelected)="onClickCourseCard($event)">
+  <app-course-card [courseDetail]="course" [highlighted]="true" (toggleHighlight)="onToggle($event)"
+   (courseSelected)="onClickCourseCard($event)">
 
       <app-course-image [src]="course.iconUrl" 
       ></app-course-image>

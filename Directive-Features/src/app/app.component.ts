@@ -33,4 +33,16 @@ export class AppComponent {
 
   }
 
+
+  onToggle(Highlighted:boolean){
+    // console.log(Highlighted)
+
+
+  }
+
+
+
+
+
+
 }
