@@ -3,19 +3,19 @@
 </div>
 <div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div>
 
-
-
-<div class="courses" *ngIf="courseData[0] as course">
-
-  <app-course-card [courseDetail]="course" [highlighted]="true" #highlighter="hl" (toggleHighlight)="onToggle($event)"
-   (courseSelected)="onClickCourseCard($event)">
-
-      <app-course-image [src]="course.iconUrl" 
-      ></app-course-image>
-
-    <div class="course-description" (dblclick)="highlighter.toggle()" >
-      {{course.longDescription}}
-    </div>
-  </app-course-card>
+<ng-template [ngIf]="courseData[0]" let-course>
+  <div class="courses" >
   
-</div> 
+    <app-course-card [courseDetail]="course" [highlighted]="true" #highlighter="hl" (toggleHighlight)="onToggle($event)"
+     (courseSelected)="onClickCourseCard($event)">
+  
+        <app-course-image [src]="course.iconUrl" 
+        *ngxUnless="!course.iconUrl"></app-course-image>
+  
+      <div class="course-description" (dblclick)="highlighter.toggle()" >
+        {{course.longDescription}}
+      </div>
+    </app-course-card>
+    
+  </div> 
+  </ng-template>
