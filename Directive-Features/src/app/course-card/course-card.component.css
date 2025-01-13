@@ -1,4 +1,3 @@
-
 :host {
   display: block;
 }
@@ -21,12 +20,12 @@
   background: lightcyan;
 }
 
- :host-context(.salmon-theme) .course-card {
-  background: lightsalmon;
+ :host-context(.Pastel-Theme) .course-card {
+  background: lightsteelblue;
 } 
 
-/* ::ng-deep .salmon-theme .course-card{
-	background: lightsalmon;
+/* ::ng-deep .Pastel-Theme .course-card{
+	background: lightsteelblue;
 } */
 
 
@@ -57,7 +56,5 @@
 .course-card.beginner {
   background: lightsalmon;
 }
-
-
 
 

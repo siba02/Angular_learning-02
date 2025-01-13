@@ -10,6 +10,7 @@ import { Course } from '../../model/Course';
   imports: [NgIf, NgClass, NgTemplateOutlet],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css',
+  
 })
 export class CourseCardComponent implements AfterViewInit, AfterContentInit {
 

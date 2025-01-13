@@ -3,8 +3,18 @@
 </div>
 <div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div>
 
+
+<div class="Pastel-Theme">
+  <div class="course-card">
+    Test card
+  </div>
+</div>
+
+
+
 <ng-template [ngIf]="courseData[0]" let-course>
-  <div class="courses" >
+
+  <div class="courses  Pastel-Theme" >
   
     <app-course-card [courseDetail]="course" [highlighted]="true" #highlighter="hl" (toggleHighlight)="onToggle($event)"
      (courseSelected)="onClickCourseCard($event)">
