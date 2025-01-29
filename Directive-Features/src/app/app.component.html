@@ -4,23 +4,22 @@
 <div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div>
 
 
-<div class="Pastel-Theme">
+<!-- <div class="Pastel-Theme">
   <div class="course-card">
     Test card
   </div>
-</div>
+</div> -->
 
 
 
-<ng-template [ngIf]="courseData[0]" let-course>
+ <!-- <ng-template [ngIf]="courseData[0]" let-course>
 
   <div class="courses Pastel-Theme " >
   
     <app-course-card [courseDetail]="course" [highlighted]="true" #highlighter="hl" (toggleHighlight)="onToggle($event)"
      (courseSelected)="onClickCourseCard($event)">
   
-        <app-course-image [src]="course.iconUrl" 
-        *ngxUnless="!course.iconUrl"></app-course-image>
+        <app-course-image [src]="course.iconUrl" *ngxUnless="!course.iconUrl"></app-course-image>
   
       <div class="course-description" (dblclick)="highlighter.toggle()" >
         {{course.longDescription}}
@@ -28,4 +27,15 @@
     </app-course-card>
     
   </div> 
-  </ng-template>
+  </ng-template>  -->
+
+
+
+<div class="courses" *ngIf="courseData$ | async as courses">
+<app-course-card  *ngFor="let course of courses " [courseDetail]="course" >
+        <app-course-image [src]="course.iconUrl"></app-course-image>
+        
+  
+</app-course-card>
+
+</div>
