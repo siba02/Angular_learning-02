@@ -7,7 +7,7 @@ import { NgIf } from '@angular/common';
 import { Course } from '../model/Course';
 import { HighlightedDirective } from './directives/highlighted.directive';
 import { NgxUnlessDirective } from './directives/ngx-unless.directive';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -19,15 +19,21 @@ export class AppComponent implements AfterViewInit{
  
   title = 'Directive-Features';
 
-  courseData=courses;
+  // courseData=courses;
+  courseData!:Course[];
 
 
 constructor(private http:HttpClient){}
   
 
 ngOnInit(){
-  this.http.get('').subscribe(
-    val=>console.log(val)
+
+const params=new HttpParams()
+.set("page","1")
+ .set("limit","10");
+
+  this.http.get<Course[]>('http://localhost:8282/courseapi/courses',{params}).subscribe(
+    val=>this.courseData=courses //('values from backend API:',val)
   )}
 
 
